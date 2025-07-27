@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      { index: true, element: <Login />},// quando o path for "/", renderiza RealizarCadastro
       { path: "/login", element: <Login /> },
       { path: "/cadastro", element: <RealizarCadastro /> },
       { path: "/home", element: <Home /> }
