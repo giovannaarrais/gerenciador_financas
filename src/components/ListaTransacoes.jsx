@@ -40,7 +40,7 @@ function ListaTransacoes( { transacoes, deletarTransacao } ){
                 <Card key={transacao.id} className={" pt-0 relative"}>
                     <div className="actions absolute top-[-11px] right-0 flex  gap-1">
                         <CardAction 
-                            className={"cursor-pointer  bg-red-700 p-1.5 text-white rounded-full"}
+                            className={"cursor-pointer  bg-sky-950 p-1.5 text-white rounded-full"}
                             onClick={() => {
                                 notify(transacao.titulo)
                                 deletarTransacao(transacao.id)
@@ -50,7 +50,7 @@ function ListaTransacoes( { transacoes, deletarTransacao } ){
                         </CardAction>
 
                         <CardAction 
-                            className={"cursor-pointer  bg-yellow-500 p-1.5 text-white rounded-full"}
+                            className={"cursor-pointer  bg-sky-400 p-1.5 text-white rounded-full"}
                             onClick={() => {
                                 alert("editar")
                             }}
