@@ -2,39 +2,53 @@ import { HandCoins } from 'lucide-react';
 import { useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import ListaTransacoes from '../components/ListaTransacoes';
+import AddTransacao from '@/components/AddTransacao';
 
 function Home(){
 
     const [transacoes, setTransacoes] = useState([
         {
             id: uuidv4(),
-            valor: "140,00",
             titulo: "Academia",
-            descricao: "",
-            tipo: "Saída"
+            valor: "140,00",
+            tipo: "Saída",
+            descricao: ""
         },
         {
             id: uuidv4(),
-            valor: "100,00",
             titulo: "Pagamento da Lucia",
-            descricao: "Pagamento da Lucia",
-            tipo: "Entrada"
+            valor: "100,00",
+            tipo: "Entrada",
+            descricao: "Pagamento da Lucia"
         },
         {
             id: uuidv4(),
-            valor: "280,00",
             titulo: "CDB",
-            descricao: "CDB",
-            tipo: "Investimento"
+            valor: "280,00",
+            tipo: "Investimento",
+            descricao: "CDB"
         },
         {
             id: uuidv4(),
-            valor: "250,00",
             titulo: "Material Escolar",
-            descricao: "Material Escolar",
-            tipo: "Saída"
+            valor: "250,00",
+            tipo: "Saída",
+            descricao: "Material Escolar"
         }
     ])
+
+    function salvarTransacao(titulo, valor, tipo, descricao){
+        const newTransacao = {
+            id: uuidv4(),
+            titulo,
+            valor,
+            tipo,
+            descricao
+        }
+
+        setTransacoes([...transacoes, newTransacao])
+    }
+    
     console.log(transacoes)
 
     return(
@@ -44,7 +58,14 @@ function Home(){
             </section>
 
             <section className='container mx-auto'>
-                <ListaTransacoes transacoes={transacoes}/>
+                <AddTransacao 
+                    transacoes={transacoes}
+                    salvarTransacao={salvarTransacao} 
+                />
+
+                <ListaTransacoes 
+                    transacoes={transacoes}
+                />
             </section>
         </div>
     )
