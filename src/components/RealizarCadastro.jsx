@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
 import { useNavigate, useOutletContext } from "react-router-dom";
-
+import { toast } from "react-toastify";
 
 function RealizarCadastro(  ){
 
@@ -11,6 +11,14 @@ function RealizarCadastro(  ){
     const [ name, setName ] = useState("")
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
+
+    const notify = () => {
+        toast.warn("Preencha os campos que estão vazios!")
+    }
+
+    const notifySuccess = () => {
+        toast.success('Acesso salvo com sucesso! Clique em "Fazer Login" para acessar.')
+    }
 
     return (
         <div className="bg-sky-500 mr-auto w-[50%]   flex items-center justify-center flex-col h-screen">
@@ -44,14 +52,27 @@ function RealizarCadastro(  ){
                     }}
                 />
 
-                <div className="flex justify-between items-center">
+                <div className="flex  gap-2">
                     <button 
                         onClick={() => {
-                            
+                            if (!name.trim() || !email.trim() || !password.trim()){
+                                notify()
+                            } else{
                                 addUser(name, email, password)
+                                notifySuccess()
+                            }
+
+                        }}
+                        className="bg-sky-900 rounded-2xl p-2 px-6 w-[50%] text-white font-semibold"
+                    >
+                        Salvar Dados
+                    </button>
+
+                    <button 
+                        onClick={() => {
                                 navigate("/login")
                         }}
-                        className="bg-sky-900 rounded-2xl p-2 px-6 text-white font-semibold"
+                        className="bg-sky-950 rounded-2xl p-2 px-6 w-[50%] text-white font-semibold"
                     >
                         Fazer Login
                     </button>

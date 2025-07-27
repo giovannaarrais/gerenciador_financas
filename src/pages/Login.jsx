@@ -1,10 +1,16 @@
 import { useState } from "react";
 import Input from "../components/Input";
 import { useNavigate, useOutletContext } from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function Login() {
   const navigate = useNavigate();
   const { users } = useOutletContext();
+
+  const notify = () => {
+    toast.warn("Dados de acesso incorretos. Tente novamente!")
+  }
 
   function Cadastre() {
       navigate("/cadastro")
@@ -24,7 +30,7 @@ function Login() {
       navigate("/home")
 
     } else{
-      alert("Dados de acesso incorretos. Tente novamente!")
+      notify()
     }
   }
 
