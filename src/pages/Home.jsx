@@ -48,6 +48,13 @@ function Home(){
 
         setTransacoes([...transacoes, newTransacao])
     }
+
+    function deletarTransacao(transacaoId){
+        const newTransacao = transacoes.filter((transacao) =>
+            transacao.id !== transacaoId)
+
+        setTransacoes(newTransacao)
+    }
     
     console.log(transacoes)
 
@@ -65,6 +72,7 @@ function Home(){
 
                 <ListaTransacoes 
                     transacoes={transacoes}
+                    deletarTransacao={deletarTransacao}
                 />
             </section>
         </div>

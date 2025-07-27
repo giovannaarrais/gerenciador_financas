@@ -6,10 +6,11 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { ArrowDownCircle, ArrowUpCircle, TrendingUp } from "lucide-react";
+import { ArrowDownCircle, ArrowUpCircle, TrendingUp, Trash2, Pencil } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-function ListaTransacoes( { transacoes } ){
+function ListaTransacoes( { transacoes, deletarTransacao } ){
 
     const navigate = useNavigate()
 
@@ -26,12 +27,39 @@ function ListaTransacoes( { transacoes } ){
         navigate(`/transacao?${query.toString()}`)
     }
 
+    const notify = (transacaoTitulo) => {
+        toast.info(` ${transacaoTitulo} foi excluído com sucesso!`)
+    }
+
     return (
         <section className="mt-10 gap-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 border-0 border-t-1 border-t-sky-200 pt-5">
+            <div className={`${transacoes.length == 0 ? 'block absolute text-sky-500 font-semibold border-0 border-b-1 border-sky-500' : 'hidden'}`}>
+                {transacoes.length == 0 && "Nenhuma Transação encontrada! Cadastre no formulário acima."}
+            </div>
             {transacoes.map((transacao) => (
-                <Card key={transacao.id} className={" pt-0"}>
-                    <CardHeader className={'bg-sky-800 rounded-t-lg text-white py-3'}>
-                        <CardTitle>{transacao.titulo}</CardTitle>
+                <Card key={transacao.id} className={" pt-0 relative"}>
+                    <div className="actions absolute top-[-11px] right-0 flex  gap-1">
+                        <CardAction 
+                            className={"cursor-pointer  bg-red-700 p-1.5 text-white rounded-full"}
+                            onClick={() => {
+                                notify(transacao.titulo)
+                                deletarTransacao(transacao.id)
+                            }}
+                        > 
+                            < Trash2 size={18}/> 
+                        </CardAction>
+
+                        <CardAction 
+                            className={"cursor-pointer  bg-yellow-500 p-1.5 text-white rounded-full"}
+                            onClick={() => {
+                                alert("editar")
+                            }}
+                        > 
+                            < Pencil  size={18}/> 
+                        </CardAction>
+                    </div>
+                    <CardHeader className={'bg-sky-800 rounded-t-lg text-white pt-4 pb-2  d-flex items-center justify-between '}>
+                        <CardTitle className={"mb-0"}>{transacao.titulo}</CardTitle>
                     </CardHeader>
 
                     <CardContent className={""}>
