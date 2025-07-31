@@ -37,8 +37,8 @@ function Login() {
 
 
   return (
-    <div className="flex">
-      <div className="flex-1 bg-sky-500 mr-auto  flex items-center justify-center flex-col h-screen">
+    <div className="flex md:flex-row flex-col-reverse h-screen">
+      <div className="flex-1 bg-linear-to-b from-sky-500 to-sky-900 mr-auto  flex items-center justify-center flex-col h-screen w-full">
         <h1 className="text-2xl text-center font-semibold text-white">
           Realize seu login
         </h1>

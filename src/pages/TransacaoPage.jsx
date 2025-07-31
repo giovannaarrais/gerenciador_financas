@@ -8,6 +8,7 @@ import {
 import { useSearchParams } from "react-router-dom";
 import { ArrowDownCircle, ArrowUpCircle, TrendingUp, HandCoins, MoveLeft  } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Header from "@/components/Header";
 
 function TransacaoPage(){
 
@@ -26,9 +27,7 @@ function TransacaoPage(){
 
     return (
         <section>
-            <section id="header" className="bg-sky-950 flex items-center gap-2 py-5 text-white text-2xl uppercase font-semibold ps-5 ">
-                <HandCoins size={35} />Gerenciador de Finanças
-            </section>
+            <Header />
             <div className="container mx-auto mt-15">
                 <div className="flex gap-5 mb-6">
                     <span 

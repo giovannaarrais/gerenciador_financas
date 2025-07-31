@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import ListaTransacoes from '../components/ListaTransacoes';
 import AddTransacao from '@/components/AddTransacao';
+import Header from '@/components/Header';
+import FilterTransacaoes from '@/components/FiltersTransacoes';
 
 function Home(){
 
@@ -60,15 +62,14 @@ function Home(){
 
     return(
         <div className=""> 
-            <section id="header" className="bg-sky-950 flex items-center gap-2 py-5 text-white text-2xl  font-semibold ps-5 ">
-                <img className='h-[45px] mr-3' src="../../src/assets/finanlogic_simbolo_white.png" alt="Símbolo Finan" />FinanLogic
-            </section>
-
+            <Header />
             <section className='container mx-auto'>
                 <AddTransacao 
                     transacoes={transacoes}
                     salvarTransacao={salvarTransacao} 
                 />
+
+                <div><FilterTransacaoes /></div>
 
                 <ListaTransacoes 
                     transacoes={transacoes}

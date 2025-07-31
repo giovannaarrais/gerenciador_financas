@@ -3,7 +3,7 @@ function Saudacao() {
     let paragrafo = 'Organize suas finanças de forma simples, prática e segura. Com o FinanLogic, você tem controle total sobre seus gastos e receitas para tomar decisões financeiras mais conscientes.'
 
     return(
-        <section className="flex-1 flex items-center flex-col justify-center px-10">
+        <section className="flex-1 flex items-center flex-col justify-center md:px-10 px-5 py-5">
             <article className="mx-auto">
                 <img className="h-[120px]" src="../../src/assets/finanlogic_logo.png" alt="Logo FinanLogic" />
             </article>
@@ -15,8 +15,8 @@ function Saudacao() {
                     {paragrafo}
                 </p>
 
-                <div className="points">
-                    <h5 className="text-1xl font-bold text-sky-500 mb-2">Por que escolher o FinanLogic?</h5>
+                <div className="points bg-sky-200 p-4 rounded-2xl tetx-white">
+                    <h5 className="text-1xl font-bold  mb-2 text-sky-800">Por que escolher o FinanLogic?</h5>
                     <ul className="list-none list-points">
                         <li>
                             Interface intuitiva e fácil de usar
