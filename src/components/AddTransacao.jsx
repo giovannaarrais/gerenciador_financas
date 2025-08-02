@@ -10,7 +10,7 @@ function AddTransacao( { props, salvarTransacao }){
     const [tipo, setTipo] = useState("")
     const [descricao, setDescricao] = useState("")
 
-     //  Função para criar a máscara de R$
+    //  Função para criar a máscara de R$
     function handleChange(e) {
         const somenteNumeros = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
         const numero = (parseInt(somenteNumeros, 10) || 0) / 100; // Divide por 100 para ter casas decimais

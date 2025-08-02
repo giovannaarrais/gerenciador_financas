@@ -1,10 +1,10 @@
-import { HandCoins } from 'lucide-react';
 import { useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import ListaTransacoes from '../components/ListaTransacoes';
 import AddTransacao from '@/components/AddTransacao';
 import Header from '@/components/Header';
 import FilterTransacaoes from '@/components/FiltersTransacoes';
+import TotalTransacoes from '@/components/TotalTransacoes';
 
 function Home(){
 
@@ -12,32 +12,33 @@ function Home(){
         {
             id: uuidv4(),
             titulo: "Academia",
-            valor: "140,00",
+            valor: 140.00,
             tipo: "Saída",
             descricao: ""
         },
         {
             id: uuidv4(),
             titulo: "Pagamento da Lucia",
-            valor: "100,00",
+            valor: 100.00,
             tipo: "Entrada",
             descricao: "Pagamento da Lucia"
         },
         {
             id: uuidv4(),
             titulo: "CDB",
-            valor: "280,00",
+            valor: 280.00,
             tipo: "Investimento",
             descricao: "CDB"
         },
         {
             id: uuidv4(),
             titulo: "Material Escolar",
-            valor: "250,00",
+            valor: 250.00,
             tipo: "Saída",
             descricao: "Material Escolar"
         }
     ])
+
 
     function salvarTransacao(titulo, valor, tipo, descricao){
         const newTransacao = {
@@ -69,7 +70,13 @@ function Home(){
                     salvarTransacao={salvarTransacao} 
                 />
 
-                <div><FilterTransacaoes /></div>
+                {/* <div><FilterTransacaoes /></div> */}
+
+                <div>
+                    <TotalTransacoes 
+                        transacoes={transacoes}
+                    />
+                </div>
 
                 <ListaTransacoes 
                     transacoes={transacoes}
