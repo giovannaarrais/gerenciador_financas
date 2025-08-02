@@ -2,9 +2,12 @@ import { useState } from "react";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
 import {  Outlet, useNavigate } from "react-router-dom";
+import Login from "./pages/Login";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function App() {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const [users, setUsers] = useState([
     {
@@ -35,7 +38,10 @@ function App() {
   console.log(users)
   
   return (
-    <Outlet context={{ users, addUser }}/>
+      <div>
+        <Outlet context={{ users, addUser }}/>
+        <ToastContainer />
+      </div>
   );
 }
 

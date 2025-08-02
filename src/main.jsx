@@ -6,15 +6,18 @@ import './index.css';
 import Login from './pages/Login.jsx';
 import Home from './pages/Home.jsx';
 import RealizarCadastro from './components/RealizarCadastro.jsx';
+import TransacaoPage from './pages/TransacaoPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      { index: true, element: <Login />},// quando o path for "/", renderiza RealizarCadastro
       { path: "/login", element: <Login /> },
       { path: "/cadastro", element: <RealizarCadastro /> },
-      { path: "/home", element: <Home /> }
+      { path: "/home", element: <Home /> },
+      { path: "/transacao", element: <TransacaoPage /> }
     ]
   }
 ]);

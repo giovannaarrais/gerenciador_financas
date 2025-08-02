@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+      font-family: "DM Sans", sans-serif;
+}
+
+.points .list-points li{
+      position: relative;
+      margin-left: 2rem;
+      margin-bottom: 10px;
+}
+
+.points .list-points li::before{
+      position: absolute;
+      top: 9px;
+      left: -24px;
+      content: '';
+      width: 13px;
+      height: 5px;
+      border-radius: 3rem;
+      background-color: #00a6f4;
+}
