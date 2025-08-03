@@ -1,8 +1,8 @@
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
 } from "@/components/ui/card"
 
 
@@ -38,8 +38,8 @@ function TotalTransacoes( { transacoes }){
 
 
     return(
-        <section className="flex gap-2 border-0 border-t-1 border-t-sky-200 pt-6">
-            <Card className={"gap-0  p-2  flex-1 border-0 border-l-3 border-red-700"}>
+        <section className="flex-col ">
+            <Card className={"gap-0  p-2  flex-1 border-0 border-l-3 border-red-700 mb-3"}>
                 <CardHeader className={"px-3"}>
                     <CardDescription>Total Saídas</CardDescription>
                 </CardHeader>
@@ -48,7 +48,7 @@ function TotalTransacoes( { transacoes }){
                 </CardContent>
             </Card>
 
-            <Card className={"gap-0  p-2 flex-1 border-0 border-l-3 border-green-700"}>
+            <Card className={"gap-0  p-2 flex-1 border-0 border-l-3 border-green-700 mb-3"}>
                 <CardHeader className={"px-3"}>
                     <CardDescription>Total Entradas</CardDescription>
                 </CardHeader>
@@ -57,7 +57,7 @@ function TotalTransacoes( { transacoes }){
                 </CardContent>
             </Card>
 
-            <Card className={"gap-0  p-2 flex-1 border-0 border-l-3 border-l-3 border-yellow-600"}>
+            <Card className={"gap-0  p-2 flex-1 border-0 border-l-3 border-l-3 border-yellow-600 mb-3"}>
                 <CardHeader className={"px-3"}>
                     <CardDescription>Total Investidos</CardDescription>
                 </CardHeader>

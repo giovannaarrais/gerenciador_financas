@@ -5,6 +5,7 @@ import AddTransacao from '@/components/AddTransacao';
 import Header from '@/components/Header';
 import FilterTransacaoes from '@/components/FiltersTransacoes';
 import TotalTransacoes from '@/components/TotalTransacoes';
+import GraficoTransacoes from '@/components/GraficoTransacoes';
 
 function Home(){
 
@@ -70,18 +71,30 @@ function Home(){
                     salvarTransacao={salvarTransacao} 
                 />
 
+
                 {/* <div><FilterTransacaoes /></div> */}
 
-                <div>
-                    <TotalTransacoes 
-                        transacoes={transacoes}
-                    />
+                <div className='flex gap-4'>
+                    <div className=' lg:max-w-xl'>
+                        <div className='w-[150px]'>
+                            <TotalTransacoes
+                                transacoes={transacoes}
+                            />
+                        </div>
+                        <div className='flex-1'>
+                            <GraficoTransacoes
+                                transacoes={transacoes}
+                            />
+                        </div>
+                    </div>
+                    <div className='flex-1'>
+                        <ListaTransacoes
+                            transacoes={transacoes}
+                            deletarTransacao={deletarTransacao}
+                        />
+                    </div>
                 </div>
 
-                <ListaTransacoes 
-                    transacoes={transacoes}
-                    deletarTransacao={deletarTransacao}
-                />
             </section>
         </div>
     )
