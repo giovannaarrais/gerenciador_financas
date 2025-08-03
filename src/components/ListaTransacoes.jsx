@@ -50,14 +50,14 @@ function ListaTransacoes( { transacoes, deletarTransacao } ){
                             < Trash2 size={18}/> 
                         </CardAction>
 
-                        <CardAction 
+                        {/* <CardAction 
                             className={"cursor-pointer  bg-sky-400 p-1.5 text-white rounded-full"}
                             onClick={() => {
                                 alert("editar")
                             }}
                         > 
                             < Pencil  size={18}/> 
-                        </CardAction>
+                        </CardAction> */}
                     </div>
                     <CardHeader className={'bg-sky-800 rounded-t-lg text-white pt-4 pb-2  d-flex items-center justify-between '}>
                         <CardTitle className={"mb-0"}>{transacao.titulo}</CardTitle>
