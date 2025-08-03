@@ -28,7 +28,7 @@ function TransacaoPage(){
     return (
         <section>
             <Header />
-            <div className="container mx-auto mt-15">
+            <div className="container mx-auto mt-15  sm:px-0 px-3">
                 <div className="flex gap-5 mb-6">
                     <span 
                         onClick={backPage}

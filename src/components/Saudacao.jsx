@@ -5,7 +5,7 @@ function Saudacao() {
     return(
         <section className="flex-1 flex items-center flex-col justify-center md:px-10 px-5 py-5">
             <article className="mx-auto">
-                <img className="h-[120px]" src="public/assets/finanlogic_logo.png" alt="Logo FinanLogic" />
+                <img className="h-[120px]" src="/assets/finanlogic_logo.png" alt="Logo FinanLogic" />
             </article>
             <article className=" mt-5">
                 <h4 className="text-2xl font-bold text-sky-500  border-b-1 border-sky-950 mb-5">

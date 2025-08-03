@@ -63,7 +63,7 @@ function Home(){
     return(
         <div className=""> 
             <Header />
-            <section className='container mx-auto'>
+            <section className='container mx-auto  sm:px-0 px-4'>
                 <AddTransacao 
                     transacoes={transacoes}
                     salvarTransacao={salvarTransacao} 
