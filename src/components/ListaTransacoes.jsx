@@ -22,7 +22,6 @@ function ListaTransacoes( { transacoes, deletarTransacao } ){
         query.set("valor", transacao.valor);
         query.set("tipo", transacao.tipo);
         query.set("descricao", transacao.descricao);
-        console.log(query)
 
         navigate(`/transacao?${query.toString()}`)
     }

@@ -19,20 +19,14 @@ function TotalTransacoes( { transacoes }){
 
         if(transacao.tipo === "Saída"){
             totalSaidas += valorNumerico
-
-            console.log(totalSaidas)
         }
 
         if(transacao.tipo === "Entrada"){
             totalEntradas += valorNumerico
-
-            console.log(totalEntradas)
         }
 
         if(transacao.tipo === "Investimento"){
             totalInvestimentos += valorNumerico
-
-            console.log(totalInvestimentos)
         }
     })
 

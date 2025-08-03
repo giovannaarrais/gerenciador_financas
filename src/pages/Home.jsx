@@ -60,8 +60,6 @@ function Home(){
         setTransacoes(newTransacao)
     }
     
-    console.log(transacoes)
-
     return(
         <div className=""> 
             <Header />

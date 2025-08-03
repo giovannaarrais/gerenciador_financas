@@ -35,7 +35,6 @@ function App() {
 
     setUsers([...users, newUser])
   }
-  console.log(users)
   
   return (
       <div>
