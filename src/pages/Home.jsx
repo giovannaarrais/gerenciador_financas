@@ -12,28 +12,28 @@ function Home(){
         {
             id: uuidv4(),
             titulo: "Academia",
-            valor: 140.00,
+            valor: "R$ 140,00",
             tipo: "Saída",
             descricao: ""
         },
         {
             id: uuidv4(),
             titulo: "Pagamento da Lucia",
-            valor: 100.00,
+            valor: "R$ 100,00",
             tipo: "Entrada",
             descricao: "Pagamento da Lucia"
         },
         {
             id: uuidv4(),
             titulo: "CDB",
-            valor: 280.00,
+            valor: "R$ 280,00",
             tipo: "Investimento",
             descricao: "CDB"
         },
         {
             id: uuidv4(),
             titulo: "Material Escolar",
-            valor: 250.00,
+            valor: "R$ 250,00",
             tipo: "Saída",
             descricao: "Material Escolar"
         }
