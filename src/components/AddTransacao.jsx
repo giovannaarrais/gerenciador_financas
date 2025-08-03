@@ -3,14 +3,14 @@ import Input from "./Input";
 import { toast } from 'react-toastify';
 
 
-function AddTransacao( { props, salvarTransacao }){
+function AddTransacao( { salvarTransacao }){
 
     const [titulo, setTitulo] = useState("")
     const [valor, setValor] = useState("")
     const [tipo, setTipo] = useState("")
     const [descricao, setDescricao] = useState("")
 
-     //  Função para criar a máscara de R$
+    //  Função para criar a máscara de R$
     function handleChange(e) {
         const somenteNumeros = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
         const numero = (parseInt(somenteNumeros, 10) || 0) / 100; // Divide por 100 para ter casas decimais
@@ -24,7 +24,7 @@ function AddTransacao( { props, salvarTransacao }){
 
     return (
         <section className="grid md:grid-cols-2 my-13 mx-auto">
-            <article className="w-auto mx-auto pr-8">
+            <article className="w-auto mx-auto pr-8 mb-4">
                 Cadastre todas as suas transações financeiras de forma simples e rápida. Ao registrar entradas, saídas e investimentos, você terá uma visão mais clara de como o seu dinheiro está sendo utilizado.
                 <br />
                 <br />

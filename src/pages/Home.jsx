@@ -1,10 +1,11 @@
-import { HandCoins } from 'lucide-react';
 import { useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import ListaTransacoes from '../components/ListaTransacoes';
 import AddTransacao from '@/components/AddTransacao';
 import Header from '@/components/Header';
 import FilterTransacaoes from '@/components/FiltersTransacoes';
+import TotalTransacoes from '@/components/TotalTransacoes';
+import GraficoTransacoes from '@/components/GraficoTransacoes';
 
 function Home(){
 
@@ -12,32 +13,33 @@ function Home(){
         {
             id: uuidv4(),
             titulo: "Academia",
-            valor: "140,00",
+            valor: "R$ 140,00",
             tipo: "Saída",
             descricao: ""
         },
         {
             id: uuidv4(),
             titulo: "Pagamento da Lucia",
-            valor: "100,00",
+            valor: "R$ 100,00",
             tipo: "Entrada",
             descricao: "Pagamento da Lucia"
         },
         {
             id: uuidv4(),
             titulo: "CDB",
-            valor: "280,00",
+            valor: "R$ 280,00",
             tipo: "Investimento",
             descricao: "CDB"
         },
         {
             id: uuidv4(),
             titulo: "Material Escolar",
-            valor: "250,00",
+            valor: "R$ 250,00",
             tipo: "Saída",
             descricao: "Material Escolar"
         }
     ])
+
 
     function salvarTransacao(titulo, valor, tipo, descricao){
         const newTransacao = {
@@ -58,8 +60,6 @@ function Home(){
         setTransacoes(newTransacao)
     }
     
-    console.log(transacoes)
-
     return(
         <div className=""> 
             <Header />
@@ -69,12 +69,27 @@ function Home(){
                     salvarTransacao={salvarTransacao} 
                 />
 
-                <div><FilterTransacaoes /></div>
+                <div className='flex md:flex-row flex-col gap-4 mt-6'>
+                    <div className='flex-1 xl:max-w-[400px] md:max-w-[300px]'>
+                        <div className=''>
+                            <TotalTransacoes
+                                transacoes={transacoes}
+                            />
+                        </div>
+                        <div className='flex-1'>
+                            <GraficoTransacoes
+                                transacoes={transacoes}
+                            />
+                        </div>
+                    </div>
+                    <div className='flex-1'>
+                        <ListaTransacoes
+                            transacoes={transacoes}
+                            deletarTransacao={deletarTransacao}
+                        />
+                    </div>
+                </div>
 
-                <ListaTransacoes 
-                    transacoes={transacoes}
-                    deletarTransacao={deletarTransacao}
-                />
             </section>
         </div>
     )

@@ -1,0 +1,66 @@
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+} from "@/components/ui/card"
+
+
+function TotalTransacoes( { transacoes }){
+
+    let totalSaidas = 0;
+    let totalEntradas = 0;
+    let totalInvestimentos = 0;
+    // calculo total de saidas, entradas e investimentos
+    transacoes.forEach((transacao) => {
+        const valorNumerico = parseFloat(
+            transacao.valor.replace("R$", "").replace(/\./g, "").replace(",", ".")
+        );
+
+        if(transacao.tipo === "Saída"){
+            totalSaidas += valorNumerico
+        }
+
+        if(transacao.tipo === "Entrada"){
+            totalEntradas += valorNumerico
+        }
+
+        if(transacao.tipo === "Investimento"){
+            totalInvestimentos += valorNumerico
+        }
+    })
+
+
+    return(
+        <section className="flex gap-2 ">
+            <Card className={"gap-0  p-2  flex-1 border-0 border-l-3 border-red-700 mb-3"}>
+                <CardHeader className={"px-2"}>
+                    <CardDescription>Total Saídas</CardDescription>
+                </CardHeader>
+                <CardContent className={"text-red-500 font-bold px-2 text-lg"}>
+                    <p>R$ {totalSaidas}</p>
+                </CardContent>
+            </Card>
+
+            <Card className={"gap-0  p-2 flex-1 border-0 border-l-3 border-green-700 mb-3"}>
+                <CardHeader className={"px-2"}>
+                    <CardDescription>Total Entradas</CardDescription>
+                </CardHeader>
+                <CardContent className={"text-green-600 font-bold px-2 text-lg"}>
+                    <p>R$ {totalEntradas}</p>
+                </CardContent>
+            </Card>
+
+            <Card className={"gap-0  p-2 flex-1 border-0 border-l-3 border-l-3 border-yellow-600 mb-3"}>
+                <CardHeader className={"px-2"}>
+                    <CardDescription>Total Investidos</CardDescription>
+                </CardHeader>
+                <CardContent className={"text-yellow-600 font-bold px-2 text-lg"}>
+                    <p>R$ {totalInvestimentos}</p>
+                </CardContent>
+            </Card>
+        </section>
+    )
+}
+
+export default TotalTransacoes;
