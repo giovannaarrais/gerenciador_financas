@@ -71,12 +71,9 @@ function Home(){
                     salvarTransacao={salvarTransacao} 
                 />
 
-
-                {/* <div><FilterTransacaoes /></div> */}
-
-                <div className='flex gap-4'>
-                    <div className=' lg:max-w-xl'>
-                        <div className='w-[150px]'>
+                <div className='flex md:flex-row flex-col gap-4 mt-6'>
+                    <div className='flex-1 xl:max-w-[400px] md:max-w-[300px]'>
+                        <div className=''>
                             <TotalTransacoes
                                 transacoes={transacoes}
                             />

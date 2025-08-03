@@ -34,7 +34,7 @@ function ListaTransacoes( { transacoes, deletarTransacao } ){
 
 
     return (
-        <section className="mt-10 gap-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1  ">
+        <section className="gap-4 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
             <div className={`${transacoes.length == 0 ? 'block absolute text-sky-500 font-semibold border-0 border-b-1 border-sky-500' : 'hidden'}`}>
                 {transacoes.length == 0 && "Nenhuma Transação encontrada! Cadastre no formulário acima."}
             </div>
