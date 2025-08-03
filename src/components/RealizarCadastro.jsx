@@ -23,7 +23,7 @@ function RealizarCadastro(  ){
 
     return (
         <div className="flex md:flex-row flex-col-reverse h-screen">
-            <div className="flex-1 bg-linear-to-b from-sky-500 to-sky-900   flex items-center justify-center flex-col h-screen">
+            <div className="flex-1 bg-linear-to-b from-sky-500 to-sky-900 py-8 flex items-center justify-center flex-col h-screen">
                 <h1 className="text-2xl text-center font-semibold text-white">
                     Realize seu Cadastro
                 </h1>
