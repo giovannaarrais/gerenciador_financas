@@ -1,44 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import ListaTransacoes from '../components/ListaTransacoes';
 import AddTransacao from '@/components/AddTransacao';
 import Header from '@/components/Header';
-import FilterTransacaoes from '@/components/FiltersTransacoes';
 import TotalTransacoes from '@/components/TotalTransacoes';
 import GraficoTransacoes from '@/components/GraficoTransacoes';
 
 function Home(){
 
-    const [transacoes, setTransacoes] = useState([
-        {
-            id: uuidv4(),
-            titulo: "Academia",
-            valor: "R$ 140,00",
-            tipo: "Saída",
-            descricao: ""
-        },
-        {
-            id: uuidv4(),
-            titulo: "Pagamento da Lucia",
-            valor: "R$ 100,00",
-            tipo: "Entrada",
-            descricao: "Pagamento da Lucia"
-        },
-        {
-            id: uuidv4(),
-            titulo: "CDB",
-            valor: "R$ 280,00",
-            tipo: "Investimento",
-            descricao: "CDB"
-        },
-        {
-            id: uuidv4(),
-            titulo: "Material Escolar",
-            valor: "R$ 250,00",
-            tipo: "Saída",
-            descricao: "Material Escolar"
-        }
-    ])
+    const [transacoes, setTransacoes] = useState(
+        JSON.parse(localStorage.getItem("transacoes")) || []
+    )
 
 
     function salvarTransacao(titulo, valor, tipo, descricao){
@@ -59,6 +31,12 @@ function Home(){
 
         setTransacoes(newTransacao)
     }
+
+    useEffect(() => {
+        console.log("transacao criada" , transacoes)
+
+        localStorage.setItem("transacoes", JSON.stringify(transacoes))
+    }), [transacoes]
     
     return(
         <div className=""> 
