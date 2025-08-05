@@ -33,8 +33,6 @@ function Home(){
     }
 
     useEffect(() => {
-        console.log("transacao criada" , transacoes)
-
         localStorage.setItem("transacoes", JSON.stringify(transacoes))
     }), [transacoes]
     

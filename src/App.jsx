@@ -12,7 +12,6 @@ function App() {
   );
 
   useEffect(() => {
-    console.log("user criado", users);
     localStorage.getItem("users", JSON.stringify(users));
   }),
     [users];
